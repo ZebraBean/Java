@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.example.mapper.CulturalInformationMapper">
+  <resultMap id="BaseResultMap" type="org.example.model.CulturalInformation">
+    <result column="id" jdbcType="INTEGER" property="id" />
+    <result column="type" jdbcType="VARCHAR" property="type" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="description" jdbcType="VARCHAR" property="description" />
+    <result column="dynasty" jdbcType="VARCHAR" property="dynasty" />
+    <result column="price" jdbcType="VARCHAR" property="price" />
+    <result column="picture" jdbcType="VARCHAR" property="picture" />
+    <result column="document" jdbcType="VARCHAR" property="document" />
+    <result column="num" jdbcType="INTEGER" property="num" />
+    <result column="repertory" jdbcType="INTEGER" property="repertory" />
+    <result column="create_user" jdbcType="VARCHAR" property="createUser" />
+    <result column="approve_status" jdbcType="VARCHAR" property="approveStatus" />
+    <result column="approve_comment" jdbcType="VARCHAR" property="approveComment" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+  </resultMap>
+  <insert id="insert" keyColumn="id" keyProperty="id" parameterType="org.example.model.CulturalInformation" useGeneratedKeys="true">
+    insert into cultural_information (type, name, description, 
+      dynasty, price, picture, 
+      document, num, repertory, 
+      create_user, approve_status, approve_comment, 
+      status)
+    values (#{type,jdbcType=VARCHAR}, #{name,jdbcType=VARCHAR}, #{description,jdbcType=VARCHAR}, 
+      #{dynasty,jdbcType=VARCHAR}, #{price,jdbcType=VARCHAR}, #{picture,jdbcType=VARCHAR}, 
+      #{document,jdbcType=VARCHAR}, #{num,jdbcType=INTEGER}, #{repertory,jdbcType=INTEGER}, 
+      #{createUser,jdbcType=VARCHAR}, #{approveStatus,jdbcType=VARCHAR}, #{approveComment,jdbcType=VARCHAR}, 
+      #{status,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="org.example.model.CulturalInformation" useGeneratedKeys="true">
+    insert into cultural_information
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="type != null">
+        type,
+      </if>
+      <if test="name != null">
+        name,
+      </if>
+      <if test="description != null">
+        description,
+      </if>
+      <if test="dynasty != null">
+        dynasty,
+      </if>
+      <if test="price != null">
+        price,
+      </if>
+      <if test="picture != null">
+        picture,
+      </if>
+      <if test="document != null">
+        document,
+      </if>
+      <if test="num != null">
+        num,
+      </if>
+      <if test="repertory != null">
+        repertory,
+      </if>
+      <if test="createUser != null">
+        create_user,
+      </if>
+      <if test="approveStatus != null">
+        approve_status,
+      </if>
+      <if test="approveComment != null">
+        approve_comment,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="type != null">
+        #{type,jdbcType=VARCHAR},
+      </if>
+      <if test="name != null">
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="description != null">
+        #{description,jdbcType=VARCHAR},
+      </if>
+      <if test="dynasty != null">
+        #{dynasty,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null">
+        #{price,jdbcType=VARCHAR},
+      </if>
+      <if test="picture != null">
+        #{picture,jdbcType=VARCHAR},
+      </if>
+      <if test="document != null">
+        #{document,jdbcType=VARCHAR},
+      </if>
+      <if test="num != null">
+        #{num,jdbcType=INTEGER},
+      </if>
+      <if test="repertory != null">
+        #{repertory,jdbcType=INTEGER},
+      </if>
+      <if test="createUser != null">
+        #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="approveStatus != null">
+        #{approveStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="approveComment != null">
+        #{approveComment,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>测试</title>
+    <link href="test.css" rel="stylesheet">
+
+    <!--引入jquery文件-->
+    <script type="text/javascript" src="js_lib/jquery@3.3.1/jquery.js"></script>
+    <!--引入javascript文件-->
+    <script type="text/javascript" src="text.js"></script>
+    <script>
+        //这里是在html文件中定义javascript
+    </script>
+
+</head>
+<!--前端字符串使用注意，外边用单引号，里边用双引号；或者外边用双引号，里边用单引号-->
+<!--这种写法是在body加载之前弹出提示框，先提示再加载body内容，jquery则是先加载body再弹出提示框-->
+<body onload="load();">
+    <p>这是第一段</p>
+    <h1>这是一级标题</h1>
+</body>
+</html>
